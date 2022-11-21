@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/admin.css')}}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-sm">
+            <div class="link-container">
+                <a href="/admin/products">Show Products</a>
+                <a href="/admin/reviews">Show Reviews</a>
+                <a href="/admin/product/register">Add Product</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+        <div class="col-lg">
+            {% block body %} {% endblock %}
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

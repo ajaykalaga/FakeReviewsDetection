@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block title %} All Reviews {% endblock %} {% block body %}
+<div class="table-container">
+    <h1 class="heading">All Reviews</h1>
+    {% if reviews|length == 0 %}
+    <h2 style="color:#cc0e0e;text-align: center;">No Report Found</h2>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>product name</th>
+                <th>username</th>
+                <th>review text</th>
+                <th>review type</th>
+                
+                <th>ip address</th>
+                <th>delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td data-label="SL">{{loop.index}}</td>
+                <td data-label="product_name">{{review[1]}}</td>
+                <td data-label="username">{{review[2]}}</td>
+                <td data-label="review text">{{review[3]}}</td>
+                <td data-label="review type">{{review[4]}}</td>
+                <td data-label="review type">{{review[5]}}</td>
+                
+                <td data-label="delete"><a href="/admin/reviews/delete/{{review[0]}}" class="btn">delete</a></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}

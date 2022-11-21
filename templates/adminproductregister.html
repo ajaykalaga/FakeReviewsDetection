@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% block title %} Add Product {% endblock %}{% block body %}
+<div class="form-container">
+    <form class="add_product" action="/admin/product/register" method="POST" enctype="multipart/form-data">
+        <div>
+            <p>Product Name</p>
+            <input type="text" name="product_name" required>
+        </div>
+        <div>
+            <p>Product Price</p>
+            <input type="text" name="product_price" required>
+        </div>
+        <div>
+            <p>Upload Product Image</p>
+            <input type="file" name="product_image" required>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</div>
+{% endblock %}

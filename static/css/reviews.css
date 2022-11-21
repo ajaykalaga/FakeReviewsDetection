@@ -1,0 +1,11 @@
+.productname{
+    color: hwb(160 0% 95%);
+    margin-left: 250px;
+    font-size: 20px;
+    margin-top: 80px;
+
+}
+.productprice{
+    color: rgb(1, 13, 9);
+
+}

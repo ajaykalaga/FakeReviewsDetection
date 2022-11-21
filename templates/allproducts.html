@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %} All Products {% endblock %} {% block body %}
+<div class="table-container">
+    <h1 class="heading">All Products</h1>
+    {% if products|length == 0 %}
+    <h2 style="color:#cc0e0e;text-align: center;">No Report Found</h2>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>product name</th>
+                <th>product price</th>
+                <th>product image</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td data-label="SL">{{loop.index}}</td>
+                <td data-label="product_name">{{product[1]}}</td>
+                <td data-label="product_price">$ {{product[2]}}</td>
+                <td data-label="product_image"><img class="table-image" src="{{url_for('static',filename='images/'+product[3])}}" alt="">
+                </td>
+                <td data-label="delete"><a href="/admin/products/delete/{{product[0]}}" class="btn">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/home.css')}}"
+    />
+    <title>Home</title>
+  </head>
+
+  <body>
+    {% if user %}
+
+    <p class="welcome">Hello, {{user[1]}}!</p>
+    <a class="logout" href="/logout">logout</a> {% endif %}
+    
+    <div class="card-container">
+      {% for product in products %}
+      <div class="cards">
+        <div class="image">
+          <img
+            src="{{url_for('static',filename='images/'+product[3])}}"
+            alt=""
+          />
+        </div>
+        <div class="title">
+          <p>{{product[1]}}</p>
+        </div>
+        <div class="desc">
+          <p>Price - $ {{product[2]}}</p>
+          <a class="btn" href="/product/review/{{product[0]}}">view</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

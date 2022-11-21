@@ -1,0 +1,8 @@
+{
+    "params": {
+        "Secret_Key": "all-the-best-ajay",
+        "db": "./database/ecommerce.db",
+        "admin_email": "ajayskalaga@gmail.com",
+        "admin_password": "ajaysharma"
+    }
+}
